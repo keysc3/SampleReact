@@ -24,7 +24,7 @@
     "jetifier": "^1.6.2",
     "metro-react-native-babel-preset": "0.54.1",
     "react-test-renderer": "16.8.6",
-    "ws": ">=3.3.1"
+    "ws": "^7.1.0"
   },
   "jest": {
     "preset": "react-native"
