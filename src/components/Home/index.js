@@ -13,6 +13,14 @@ class Home extends Component {
                     <Text style = {styles.slogan}>Find shifts to fit your schedule!</Text>
                 </View>
                 <View style = {styles.bottomContainer}>
+                <View>
+                        <TouchableOpacity onPress = {() => this.props.navigation.navigate('dash')}>
+                            <View style = {styles.loginButton}>
+                                <Text style = {styles.loginButtonText}>Dashboard</Text>
+                            </View>
+                        </TouchableOpacity>
+                    </View>
+                    
                     <View>
                         <TouchableOpacity onPress = {() => this.props.navigation.navigate('login')}>
                             <View style = {styles.loginButton}>
