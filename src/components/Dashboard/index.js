@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, StyleSheet, Image, Button, TouchableOpacity} from 'react-native';
+import { View, Text, TextInput, StyleSheet, Image, Button, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 class Dashboard extends Component {
-
+    constructor(props) {
+        super(props)
+        this.state = { uri: 'https://img.icons8.com/ios/64/000000/home.png' }
+      }
     render() {
         return (
             <View style={styles.mainContainer}>
@@ -16,24 +19,32 @@ class Dashboard extends Component {
                 <View style= {styles.dividerline}/>
                     <View style = {styles.topnav}>
                         <View style={styles.bottomnav}>
-                        <Image style={styles.iconsize}
-                        source={{uri: 'https://img.icons8.com/ios/64/000000/folder-invoices--v2.png'}}/>
-                        <Text style={styles.label}>Home</Text>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('dash')}>
+                                <Image style={styles.iconsize}
+                                source={{uri: 'https://img.icons8.com/ios/64/000000/home.png'}}/>
+                            </TouchableOpacity>
+                            <Text style={styles.label}>Home</Text>
+                        </View>
+                            <View style={styles.bottomnav}> 
+                            <TouchableOpacity onPress = {() => this.props.navigation.navigate('dash')}>
+                                <Image style={styles.iconsize}
+                                source={{uri: 'https://img.icons8.com/ios/64/000000/search--v1.png'}}/>
+                            </TouchableOpacity>
+                            <Text style={styles.label}>Jobs</Text>
+                        </View>
+                            <View style={styles.bottomnav}> 
+                            <TouchableOpacity onPress = {() => this.props.navigation.navigate('dash')}>
+                                <Image style={styles.iconsize}
+                                source={{uri: 'https://img.icons8.com/ios/64/000000/groups.png'}}/>
+                            </TouchableOpacity>
+                            <Text style={styles.label}>Groups</Text>
                         </View>
                         <View style={styles.bottomnav}> 
-                        <Image style={styles.iconsize}
-                        source={{uri: 'https://img.icons8.com/ios/64/000000/search--v1.png'}}/>
-                        <Text style={styles.label}>Jobs</Text>
-                        </View>
-                        <View style={styles.bottomnav}> 
-                        <Image style={styles.iconsize}
-                        source={{uri: 'https://img.icons8.com/ios/64/000000/groups.png'}}/>
-                        <Text style={styles.label}>Jobs</Text>
-                        </View>
-                        <View style={styles.bottomnav}> 
-                        <Image style={styles.iconsize}
-                        source={{uri: 'https://img.icons8.com/ios/64/000000/settings.png'}}/>
-                        <Text style={styles.label}>Jobs</Text>
+                            <TouchableOpacity onPress = {() => this.props.navigation.navigate('dash')}>
+                                <Image style={styles.iconsize}
+                                source={{uri: 'https://img.icons8.com/ios/64/000000/settings.png'}}/>
+                            </TouchableOpacity>
+                            <Text style={styles.label}>Settings</Text>
                         </View>
                     </View>
                 </View>
