@@ -121,7 +121,7 @@ const TabNavigator = createBottomTabNavigator({
         header: null,
       }),
         tabBarOptions: {
-            activeTintColor: 'black',
+            activegiTintColor: 'black',
             inactiveTintColor: 'gray',
             justifyContent: "space-evenly",
     
@@ -133,6 +133,7 @@ const TabNavigator = createBottomTabNavigator({
     },
   
     }
+    
 );
 
 export default createAppContainer(TabNavigator);

@@ -33,6 +33,7 @@ const AppNavigator = createStackNavigator({
 
 );
 
+
 //const AppContainer = createAppContainer(RootStack);
 const AppContainer = createAppContainer(AppNavigator);
 

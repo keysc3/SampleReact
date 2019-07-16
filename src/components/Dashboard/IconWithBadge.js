@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text} from 'react-native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
+
 class IconWithBadge extends Component {
     render() {
       const { name, badgeCount, color, size } = this.props;
