@@ -29,11 +29,13 @@ class Register extends Component {
                                 placeholderTextColor = "#6c9192"/>
                             <TextInput  style = {styles.input}
                                 autoCorrect = {false}
+                                secureTextEntry = {true}
                                 underlineColorAndroid = "rgba(0, 0, 0, 0)"
                                 placeholder = "Password"
                                 placeholderTextColor = "#6c9192"/>
                             <TextInput  style = {styles.input}
                                 autoCorrect = {false}
+                                secureTextEntry = {true}
                                 underlineColorAndroid = "rgba(0, 0, 0, 0)"
                                 placeholder = "Confirm Password"
                                 placeholderTextColor = "#6c9192"/>
