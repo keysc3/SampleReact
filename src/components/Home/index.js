@@ -30,6 +30,7 @@ class Home extends Component {
                     </View>
                     <View>
                         <Button style = {styles.regButton}
+                            onPress = {() => this.props.navigation.navigate('register')}
                             title = "Register"
                             borderColor = '#dff3fd'/>
                     </View>
