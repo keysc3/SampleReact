@@ -5,16 +5,23 @@ import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 class Register extends Component {
     render () {
         return (
+        // Main Container
         <View style = {styles.mainContainer}>
+            {/* Inner Container */}
             <View style = {styles.innerContainer}>
-                <View style = {{alignSelf: 'center', paddingTop: 10}}>
-                            <Image
-                            style={{width: 80, height: 80}}
-                            source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}/>
+                {/* Logo and Page Title View */}
+                <View style = {{alignItems: 'center', paddingTop: 10}}>
+                    <Image
+                    style={{width: 80, height: 80}}
+                    source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}}/>
+                    <Text style = {styles.regText}>Register</Text>
                 </View>
-                <ProgressSteps activeStepNumColor = 'white' progressBarColor = '#dff3fd' disabledStepIconColor = '#dff3fd'>
-                    <ProgressStep label = "Account">
-                        <View>
+                {/* Register Steps */}
+                <ProgressSteps activeStepNumColor = 'white' progressBarColor = '#dff3fd' disabledStepIconColor = '#dff3fd' disabledStepNumColor = '#6c9192'>
+                    {/* First Register Step: Account Info */}
+                    <ProgressStep label = "Account" nextBtnStyle = {styles.nextButton} 
+                    nextBtnTextStyle = {styles.nextButtonText}>
+                        <View style = {{margin: 40}}>
                             <TextInput  style = {styles.input}
                                 autoCorrect = {false}
                                 underlineColorAndroid = "rgba(0, 0, 0, 0)"
@@ -32,8 +39,10 @@ class Register extends Component {
                                 placeholderTextColor = "#6c9192"/>
                         </View>
                     </ProgressStep>
-                    <ProgressStep label = "Personal">
-                        <View>
+                    {/* Second Register Step: Personal Info */}
+                    <ProgressStep label = "Personal" nextBtnStyle = {styles.nextButton} 
+                    nextBtnTextStyle = {styles.nextButtonText} previousBtnTextStyle = {styles.previousButtonText}>
+                        <View style = {{margin: 40}}>
                         <TextInput  style = {styles.input}
                                 autoCorrect = {false}
                                 underlineColorAndroid = "rgba(0, 0, 0, 0)"
@@ -51,8 +60,10 @@ class Register extends Component {
                                 placeholderTextColor = "#6c9192"/>
                         </View>
                     </ProgressStep>
-                    <ProgressStep label = "Location">
-                        <View>
+                    {/* Third Register Step: Location Info */}
+                    <ProgressStep label = "Location" nextBtnStyle = {styles.nextButton} 
+                    nextBtnTextStyle = {styles.nextButtonText} previousBtnTextStyle = {styles.previousButtonText} onSubmit = {() => this.props.navigation.navigate('dash')}>
+                        <View style = {{margin: 40}}>
                         <TextInput  style = {styles.input}
                                 autoCorrect = {false}
                                 underlineColorAndroid = "rgba(0, 0, 0, 0)"
@@ -82,6 +93,7 @@ class Register extends Component {
     }
 }
 
+// Styles
 const styles = StyleSheet.create({
     mainContainer: {
         flex: 1,
@@ -100,7 +112,25 @@ const styles = StyleSheet.create({
     },
     innerContainer: {
         flex: 4, 
-        backgroundColor: '#021f4b'
+        backgroundColor: '#021f4b',
+    },
+    regText: {
+        margin: 10,
+        fontSize: 26,
+        color: '#ffffff'
+    },
+    nextButton: {
+        backgroundColor: '#1c97f4',
+        borderRadius: 5,
+        width: 100,
+        height: 40,
+    },
+    nextButtonText: {
+        alignSelf: 'center',
+        color: '#dff3fd'
+    },
+    previousButtonText: {
+        color: '#1c97f4'
     }
 });
 
