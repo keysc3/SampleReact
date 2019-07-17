@@ -18,19 +18,21 @@ import Jobs from './src/components/Dashboard/jobs.js';
 import Register from './src/components/Register';
 
 const AppNavigator = createStackNavigator({
-  home: {
-    screen: Home,
-    navigationOptions: {
-    header: null
-    }
-  },
+  home: Home,
   login: Login,
   register: Register,
   dash: Dashboard,
   jobs: Jobs,
   },
-
-
+  {
+    initialRouteName: 'home',
+    defaultNavigationOptions: {
+      headerTintColor: '#1c97f4',
+      headerStyle: {
+        backgroundColor: '#021f4b',
+      },
+    },
+  }
 );
 
 
@@ -38,9 +40,6 @@ const AppNavigator = createStackNavigator({
 const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends Component {
-  static navigationOptions = {
-    header: null
-}
   render() {
     return (
      
